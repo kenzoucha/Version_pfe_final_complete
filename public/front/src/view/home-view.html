@@ -1,0 +1,47 @@
+
+
+<div class="row">
+    <div class="col s4" ng-repeat="prod in products | filter : byInput">
+        <div class="card small">
+            <div class="chip" style="position: absolute; right: 5px; top: 5px; z-index: 999;">
+                <span class="deep-orange-text">{{prod.price}} DT</span>
+                <img ng-src="front/assets/images/save-money.png" alt="Contact Person">
+            </div>
+            <div class="card-image">
+                <div ng-if="prod.images.length !== 0">
+                    <div ng-repeat="img in prod.images | limitTo : 1">
+                        <img ng-src="assets/images/{{img.name}}">
+                    </div>
+                </div>
+                <div ng-if="prod.images.length == 0">
+                    <img ng-src="assets/images/no_image.jpeg">
+                </div>
+                <span class="card-title">{{prod.designation}}</span>
+            </div>
+            <div class="card-content">
+                <p>{{prod.description | limitTo : 21}}... <a ui-sref="products.detail({productId:prod._id})"> Lire la suite&rarr;</a></p>
+            </div>
+            <div class="card-action">
+                <a class="btn-floating waves-effect waves-light pink accent-2"><i class="mdi-action-room"></i></a>
+                <a class="btn-floating waves-effect waves-light red accent-2"><i class="mdi-action-favorite"></i></a>
+                <a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-visibility"></i></a>
+                <button   name="action"  class="btn-floating waves-effect waves-light green" ng-click="addToPanier(prod._id)"  ><i class=" mdi-action-add-shopping-cart"></i></button>
+                <a ui-sref="products.detail({productId:prod._id})" class="right" style="color: #5bc0de;"><i class="material-icons">trending_flat</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+        <a class="btn-floating btn-large">
+            <i class="mdi-action-stars"></i>
+        </a>
+        <ul>
+            <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+            <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+            <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+            <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+        </ul>
+    </div>
+    <!-- Floating Action Button -->
+</div>

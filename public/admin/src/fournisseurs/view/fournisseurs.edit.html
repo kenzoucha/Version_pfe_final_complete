@@ -1,0 +1,22 @@
+<h4 class="header">Modifier Fournisseur</h4>
+<div class="card-panel">
+    <form class="col s12" >
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="firstname" type="text" class="validate" ng-model="fourni.firstname">
+                <label ng-class="{active : focus == true}" for="firstname">firstname</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="lastname" class="materialize-textarea" ng-model="fourni.lastname"></textarea>
+                <label ng-class="{active : focus == true}" for="lastname">lastname</label>
+            </div>
+        </div>
+        <a  class="btn pink" name="action" ng-click="editFourni()">Enregister
+            <i class="material-icons right">send</i>
+        </a>
+    </form>
+</div>

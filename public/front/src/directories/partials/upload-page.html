@@ -1,0 +1,12 @@
+<div class="thumbnail">
+    <section class="section" ng-show="loader">
+        <span class="loader-bars loader">
+            <span></span>
+        </span>
+        chargement...
+    </section>
+    <img class="thumbnail__user-profile" src="http://daemonite.github.io/material/images/users/avatar-001.jpg" alt="Image Profile" ng-show="!loader" ng-if="!user._imageId">
+    <img class="thumbnail__user-profile" ng-src="/uploads/{{user._imageId.name}}" alt="Image Profile" ng-show="!loader" ng-if="user._imageId">
+    <div class="thumbnail__upload-bar upload-btn"><i class="icon icon-camera"></i><span>changer image</span></div>
+    <input id="upload-input" type="file" name="upload">
+</div>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="StockDeal">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+    <title>StockDeal</title>
+    <!-- Favicons-->
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="assets/images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->
+    <link href="../lib/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="http://daemonite.github.io/material/css/base.min.css" rel="stylesheet">
+
+    <link href="../lib/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <link href="../lib/angular-toasty/dist/angular-toasty.min.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/profile.css" type="text/css" rel="stylesheet">
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="../lib/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../lib/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../lib/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <!-- Import Materlialize Js -->
+    <script src="../lib/js/materialize.min.js"></script>
+
+
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../lib/angular-resource/angular-resource.min.js"></script>
+    <script src="../lib/angular-toasty/dist/angular-toasty.min.js"></script>
+    <script src="../lib/angular-messages/angular-messages.min.js"></script>
+    <script src="src/app.js"></script>
+    <!-- home-->
+    <script src="src/controller/home-controller.js"></script>
+    <script src="src/service/homeService.js"></script>
+<!--   paniers -->
+
+   <script src="src/paniers/service/panier-service.js"></script>
+    <script src="src/paniers/controllerPanier/paddController.js"></script>
+    <script src="src/paniers/controllerPanier/panierController.js"></script>
+
+  <!--   <script src="../admin/src/products/service/product-service.js"></script>-->
+    <!-- <script src="../admin/src/products/controller/productController.js"></script>-->
+
+
+    <script src="src/auth/auth.js"></script>
+
+    <script src="src/factories.js"></script>
+    <script src="src/directories/directives.js"></script>
+    <script src="../lib/js/autotemple.js">
+    </script>
+    <script src="../lib/js/base.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/css/client.css"/>
+</head>
+
+<body ng-model="navShow">
+
+    <header id="header" class="page-topbar" ng-show="navShow">
+
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="white">
+                <div class="nav-wrapper">
+                    <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><span class="logo-text">StockDeal</span></a></h1>
+                    <ul class="pull-right">
+                        <li class="search-out">
+                            <input type="text" class="search-out-text">
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>
+                        </li>
+                        <li><a href="" class="waves-effect waves-block waves-black"><i class="material-icons">favorite</i></a>
+                        </li>
+                        <li><a ui-sref="addpanier" class="waves-effect waves-block waves-light"><i class="material-icons">&#xE8CC;</i></a>
+                        </li>
+                        <li><a ui-sref="messagerie"><i  class="material-icons">info</i></a>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <!-- end header nav-->
+    </header>
+    <header id="header2" class="page-topbar" ng-show="navShow">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="light">
+                <div class="nav-wrapper">
+                    <ul class="nav nav-list pull-left nav-avatar">
+                        <li class="dropdown margin-left">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="access-hide">John Smith</span>
+                                <span class="avatar avatar-sm" ng-if="!user._imageId"><img alt="alt text for John Smith avatar" src="http://daemonite.github.io/material/images/users/avatar-001.jpg"></span>
+                                <span class="avatar avatar-sm" ng-if="user._imageId"><img alt="alt text for John Smith avatar" ng-src="/uploads/{{user._imageId.name}}"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    <a class="padding-right-lg waves-attach" ui-sref="profile"><span class="icon icon-lg margin-right">account_box</span>Profile Settings</a>
+                                </li>
+                                <li>
+                                    <a class="padding-right-lg waves-attach" ui-sref="account"><span class="icon icon-lg margin-right">add_to_photos</span>Upload Photo</a>
+                                </li>
+                                <li>
+                                    <a class="padding-right-lg waves-attach" ng-click="logout()" href><span class="icon icon-lg margin-right">exit_to_app</span>Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-list pull-left">
+                        <li class=" margin-left white">
+                            <a  ui-sref="home"><i class="mdi-maps-store-mall-directory "></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </nav>
+
+        <!-- end header nav-->
+        </div>
+
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div ui-view>
+             <!--   <div ui-view="home-view"></div>-->
+                <div ui-view="hom-view"></div>
+                <div ui-view="login-view"></div>
+                <div ui-view="register-view"></div>
+                <div ui-view="account-view"></div>
+                <div ui-view="logout-view"></div>
+                <div ui-view="profile-view"></div>
+
+             <div ui-view="adress-view"></div>
+                <div ui-view="image-view"></div>
+                <div ui-view="listaddpanier-view"></div>
+                <div ui-view="messagerie-view"></div>
+                <div ui-view='listpanier-view'></div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer light-blue" style="position: fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">AIDE & CONTACT</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">AIDE & CONTACT</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">  Qui sommes-nous?</a></li>
+                        <li><a class="white-text" href="#!">Stockdeal en images</a></li>
+                        <li><a class="white-text" href="#!">Livraison</a></li>
+                        <li><a class="white-text" href="#!">Le paiement</a></li>
+                        <li><a class="white-text" href="#!">Sécurité</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">
+                        MENTIONS LÉGALES</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Conditions générales de vente
+                        </a></li>
+                        <li><a class="white-text" href="#!">Conditions générales d'utilisation</a></li>
+                        <li><a class="white-text" href="#!">Mediation</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Copyright © 2016 </a> All rights reserved.
+                <span class="right"> Design and Developed by StockDeal</a></span>
+            </div>
+        </div>
+    </footer>
+    <toasty></toasty>
+</body>
+<script>
+
+    // @nodws
+    (function() {
+        $(".icon").on('click', function() {
+            $(this).toggleClass('active');
+            $('.box').toggleClass('active');
+            return $('.tap').addClass('active');
+        });
+
+
+    }).call(this);
+</script>
+</html>

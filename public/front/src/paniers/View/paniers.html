@@ -1,0 +1,27 @@
+
+<h4>Mon panier</h4>
+<div class="card-panel">
+    <div class="input-field col s640" >
+
+    </div>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th data-field="id" class="grey-text text-darken-2"> designation </th>
+            <th data-field="name" class="grey-text text-darken-2"> price</th>
+            <th>commander<span>
+        </span>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="panier in paniers ">
+            <td>{{panier._id}}</td>
+            <td>{{panier.designation}}</td>
+           <td><a  class="btn pink" name="action" ng-click="getProduct">Enregister<i class="material-icons right">send</i></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+

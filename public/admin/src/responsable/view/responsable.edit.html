@@ -1,0 +1,22 @@
+<h4 class="header">Modifier responsable</h4>
+<div class="card-panel">
+    <form class="col s12" >
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="username" type="text" class="validate" ng-model="user.username">
+                <label ng-class="{active : focus == true}" for="username">username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="email" type="email" ng-model="user.email" name="email" required>
+                <label ng-class="{active : focus == true}" for="email">email</label>
+            </div>
+        </div>
+        <a  class="btn pink" name="action" ng-click="editUser()">Enregister
+            <i class="material-icons right">send</i>
+        </a>
+    </form>
+</div>

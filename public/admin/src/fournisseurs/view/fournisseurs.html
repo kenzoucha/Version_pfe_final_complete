@@ -1,0 +1,32 @@
+
+<h4 class="header">Listes Fournisseurs</h4>
+<div class="card-panel">
+    <div class="input-field col s6" >
+        <i class="material-icons prefix">search</i>
+        <input type="text" class="validate" ng-model="byInput">
+    </div>
+    <table class="responsive-table">
+        <thead>
+        <tr>
+            <th data-field="id" class="grey-text text-darken-2">firstname</th>
+            <th data-field="name" class="grey-text text-darken-2">lastname</th>
+            <th>Edition</th>
+            <th>Suppression</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-if="fournisseurs.length === 0">
+            <td style="text-align: center;" colspan="5">
+                <h5>Aucune fournisseurs trouvées</h5>
+            </td>
+        </tr>
+        <tr ng-repeat="four in fournisseurs | filter : byInput">
+            <td>{{four.firstname}}</td>
+            <td>{{four.lastname}}</td>
+            <td><a ng-click="deleteFourni(four._id)" href="" style="color: #d9534f;"><i class="material-icons">delete</i></a></td>
+            <td><a ng-click="edit(four._id)"  style="color: #f0ad4e;"><i class="material-icons">mode_edit</i></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

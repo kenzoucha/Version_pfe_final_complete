@@ -1,0 +1,55 @@
+<h4 class="header">Mon adresse</h4>
+<div class="col s10 z-depth-4 card-panel-center">
+    <form class="col s6"ng-submit="addres()">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="username" type="text" class="validate" ng-model="adress.firstname">
+                <label ng-class="{active : focus == true}" for="username">firstname</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="lastname" type="text" class="validate" ng-model="adress.lastname">
+                <label ng-class="{active : focus == true}" for="lastname">lastname</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">Societe</i>
+                <input id="Societe" type="text" class="validate" ng-model="adress.societe">
+                <label ng-class="{active : focus == true}" for="Societe">Si livraison sur le lieu de travail</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix"ng-model="adress.pays">Pays</i>
+                <input id="Pays" type="text" class="validate" >
+                <label for="Pays">Pays</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix"ng-model="adress.ville">Ville</i>
+                <input id="ville" type="text" class="validate" >
+                <label for="ville">ville</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix"ng-model="adress.codepostal">code</i>
+                <input id="code postal" type="text"  class="validate" >
+                <label for="code postal">code postal</label>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn pink" name="action">Enregister
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+    </div>
+
+

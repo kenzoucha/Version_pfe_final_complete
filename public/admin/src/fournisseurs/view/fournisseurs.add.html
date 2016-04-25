@@ -1,0 +1,63 @@
+<h4 class="header">Nouveau Fournisseur</h4>
+<div class="col s10 z-depth-4 card-panel-center">
+    <form class="col s6">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="username" type="text" class="validate"  ng-model="fourni.firstname">
+                <label ng-class="{active : focus == true}" for="username">firstname</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="lastname" type="text" class="validate"  ng-model="fourni.lastname">
+                <label ng-class="{active : focus == true}" for="lastname">lastname</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate"ng-model="fourni.tel">
+                <label for="icon_telephone">tel</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">Pays</i>
+                <input id="Pays" type="tel" class="validate" ng-model="fourni.pays">
+                <label for="Pays">Pays</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">Ville</i>
+                <input id="ville" type="tel" class="validate" ng-model="fourni.ville">
+                <label for="ville">ville</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+
+                <i class="material-icons prefix">date_range</i>
+                <label for="debutabon">birthdate</label>
+                <input type="datetime" class="datepicker" id="debutabon" ng-model="fourni.debutabon">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+
+                <i class="material-icons prefix">date_range</i>
+                <label for="finabon">birthdate</label>
+                <input type="text" class="datepicker" id="finabon"ng-model="fourni.finabon">
+
+            </div>
+        </div>
+        <button type="submit" class="btn pink" name="action" ng-click="addFourni()">Enregister
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+</div>

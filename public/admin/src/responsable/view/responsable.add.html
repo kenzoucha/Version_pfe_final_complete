@@ -1,0 +1,41 @@
+<h4 class="header">Nouveau responsable</h4>
+<div class="col s10 z-depth-4 card-panel-center" name="user">
+    <form class="col s6">
+        <div class="row margin">
+            <div class="input-field col s12">
+                <i class="mdi-social-person-outline prefix"></i>
+                <input id="username" type="text" name="username"ng-model="user.username" required minlength="5">
+                <label for="username" class="center-align">Username</label>
+                <div ng-messages="form.username.$error" class="alert" role="alert" ng-show="form.$submitted || form.username.$touched">
+                    <div ng-message="required">Entrer un pseudo</div>
+                    <div ng-message="minlength">Le pseudo doit contenir au muinimum 5 caractères</div>
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" type="email" ng-model="user.email" name="email" required>
+            <label for="email" class="center-align">Email</label>
+            <div ng-messages="form.email.$error" class="alert" role="alert" ng-show="form.$submitted || form.email.$touched">
+                <div ng-message="required">Entrer un email</div>
+                <div ng-message="email">Entrer un email valide</div>
+            </div>
+        </div>
+
+        <div class="input-field col s12">
+        <select class="browser-default" ng-model="user.role">
+            <option value="" disabled selected>Choose your role</option>
+            <option value="rv" >responsable vente</option>
+            <option value="rl">responsable livraison</option>
+        </select>
+
+</div>
+<div class="row">
+    <div class="input-field col s12">
+        <a class="btn waves-effect waves-light col s12"  ng-click="addUser()">Register Now</a>
+    </div>
+
+</div>
+    </form>
+
+</div>
